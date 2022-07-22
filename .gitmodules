@@ -28,3 +28,6 @@
 [submodule "nvim/.local/share/nvim/site/pack/default/start/barbar.nvim"]
 	path = nvim/.local/share/nvim/site/pack/default/start/barbar.nvim
 	url = https://github.com/romgrk/barbar.nvim
+[submodule "nvim/.local/share/nvim/site/pack/default/start/vim-startify"]
+	path = nvim/.local/share/nvim/site/pack/default/start/vim-startify
+	url = https://github.com/mhinz/vim-startify
