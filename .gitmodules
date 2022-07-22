@@ -16,3 +16,9 @@
 [submodule "nvim/.local/share/nvim/site/pack/default/start/which-key.nvim"]
 	path = nvim/.local/share/nvim/site/pack/default/start/which-key.nvim
 	url = https://github.com/folke/which-key.nvim
+[submodule "nvim/.local/share/nvim/site/pack/default/start/plenary.nvim"]
+	path = nvim/.local/share/nvim/site/pack/default/start/plenary.nvim
+	url = https://github.com/nvim-lua/plenary.nvim
+[submodule "nvim/.local/share/nvim/site/pack/default/start/telescope.nvim"]
+	path = nvim/.local/share/nvim/site/pack/default/start/telescope.nvim
+	url = https://github.com/nvim-telescope/telescope.nvim

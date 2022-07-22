@@ -37,3 +37,17 @@ which_key.setup {
         ['<tab>'] = 'TAB',
     }
 }
+
+
+local telescope = require 'telescope'
+local actions = require 'telescope.actions'
+local mappings = 
+telescope.setup {
+    defaults = {
+        mappings = {
+            i = {
+                ['<esc>'] = actions.close
+            }
+        }
+    }
+}
