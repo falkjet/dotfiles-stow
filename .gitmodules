@@ -1,3 +1,6 @@
 [submodule "shell/.local/share/ohmyzsh"]
 	path = shell/.local/share/ohmyzsh
 	url = https://github.com/ohmyzsh/ohmyzsh
+[submodule "p10k/.local/share/ohmyzsh/custom/themes/powerlevel10k"]
+	path = p10k/.local/share/ohmyzsh/custom/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k
