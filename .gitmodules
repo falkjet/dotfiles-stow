@@ -37,3 +37,6 @@
 [submodule "nvim/.local/share/nvim/site/pack/default/start/vim-obsession"]
 	path = nvim/.local/share/nvim/site/pack/default/start/vim-obsession
 	url = https://github.com/tpope/vim-obsession
+[submodule "nvim/.local/share/nvim/site/pack/default/start/vimtex"]
+	path = nvim/.local/share/nvim/site/pack/default/start/vimtex
+	url = https://github.com/lervag/vimtex
