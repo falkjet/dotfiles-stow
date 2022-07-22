@@ -13,3 +13,4 @@ vim.o.signcolumn = 'number'
 vim.o.timeoutlen = 300
 
 require "theme"
+require "keymap"
