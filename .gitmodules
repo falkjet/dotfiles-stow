@@ -10,3 +10,6 @@
 [submodule "nvim/.local/share/nvim/site/pack/default/start/vim-airline-themes"]
 	path = nvim/.local/share/nvim/site/pack/default/start/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "nvim/.local/share/nvim/site/pack/default/start/onedarkpro.nvim"]
+	path = nvim/.local/share/nvim/site/pack/default/start/onedarkpro.nvim
+	url = https://github.com/olimorris/onedarkpro.nvim
