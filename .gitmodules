@@ -4,3 +4,9 @@
 [submodule "p10k/.local/share/ohmyzsh/custom/themes/powerlevel10k"]
 	path = p10k/.local/share/ohmyzsh/custom/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k
+[submodule "nvim/.local/share/nvim/site/pack/default/start/vim-airline"]
+	path = nvim/.local/share/nvim/site/pack/default/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule "nvim/.local/share/nvim/site/pack/default/start/vim-airline-themes"]
+	path = nvim/.local/share/nvim/site/pack/default/start/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes

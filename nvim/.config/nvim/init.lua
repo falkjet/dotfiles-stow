@@ -11,3 +11,5 @@ vim.o.expandtab = true
 vim.o.updatetime = 300
 vim.o.signcolumn = 'number'
 vim.o.timeoutlen = 300
+
+require "theme"
