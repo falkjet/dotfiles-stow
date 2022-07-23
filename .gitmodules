@@ -43,3 +43,24 @@
 [submodule "nvim/.local/share/nvim/site/pack/default/start/toggleterm.nvim"]
 	path = nvim/.local/share/nvim/site/pack/default/start/toggleterm.nvim
 	url = https://github.com/akinsho/toggleterm.nvim
+[submodule "nvim/.local/share/nvim/site/pack/default/start/nvim-lspconfig"]
+	path = nvim/.local/share/nvim/site/pack/default/start/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig
+[submodule "nvim/.local/share/nvim/site/pack/default/start/nvim-cmp"]
+	path = nvim/.local/share/nvim/site/pack/default/start/nvim-cmp
+	url = https://github.com/hrsh7th/nvim-cmp/
+[submodule "nvim/.local/share/nvim/site/pack/default/start/cmp-nvim-lsp"]
+	path = nvim/.local/share/nvim/site/pack/default/start/cmp-nvim-lsp
+	url = https://github.com/hrsh7th/cmp-nvim-lsp
+[submodule "nvim/.local/share/nvim/site/pack/default/start/cmp-buffer"]
+	path = nvim/.local/share/nvim/site/pack/default/start/cmp-buffer
+	url = https://github.com/hrsh7th/cmp-buffer
+[submodule "nvim/.local/share/nvim/site/pack/default/start/cmp-path"]
+	path = nvim/.local/share/nvim/site/pack/default/start/cmp-path
+	url = https://github.com/hrsh7th/cmp-path
+[submodule "nvim/.local/share/nvim/site/pack/default/start/cmp-cmdline"]
+	path = nvim/.local/share/nvim/site/pack/default/start/cmp-cmdline
+	url = https://github.com/hrsh7th/cmp-cmdline
+[submodule "nvim/.local/share/nvim/site/pack/default/start/LuaSnip"]
+	path = nvim/.local/share/nvim/site/pack/default/start/LuaSnip
+	url = https://github.com/L3MON4D3/LuaSnip
