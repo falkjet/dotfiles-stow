@@ -15,3 +15,4 @@ vim.o.timeoutlen = 300
 require "theme"
 require "keymap"
 require "gitsigns".setup()
+require "terminal"
