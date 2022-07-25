@@ -9,24 +9,6 @@ eval "$(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-ge
 ### XDG variables ###
 XDG_CONFIG_HOME="$HOME/.config"
 
-
-### misc aliases ###
-alias please=sudo
-alias ls='ls --color=auto'
-alias restart='clear; exec zsh'
-alias tmux='systemd-run --scope --user tmux -2 -f "$XDG_CONFIG_HOME/tmux/tmux.conf"'
-alias grep='grep --color'
-alias la='ls -la'
-alias lA='ls -lA'
-alias clip='xclip -selection c'
-alias paste='xclip -selection c -o'
-alias clipcwd='pwd | xclip -selection c'
-alias cdclip='cd $(xclip -selection c -o)'
-alias prisma='npx prisma'
-alias irssi='irssi --home ~/.config/irssi/ --config ~/.config/irssi/config'
-alias config='git --git-dir="$HOME"/dotfiles --work-tree="$HOME"'
-alias md='glow -p -w $COLUMNS'
-
 ### neovim ###
 export EDITOR=nvim
 alias vim=nvim
