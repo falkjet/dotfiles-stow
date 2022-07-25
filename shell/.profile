@@ -1,3 +1,6 @@
+### environment.d ###
+eval "$(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator | sed 's/^/export /')"
+
 ### XDG variables ###
 XDG_CONFIG_HOME="$HOME/.config"
 
