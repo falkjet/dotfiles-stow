@@ -1,5 +1,5 @@
 ### .profile.d ###
-for file in ~/.profile.d/*; do
+for file in ~/.profile.d/*.sh; do
     . "$file"
 done
 
