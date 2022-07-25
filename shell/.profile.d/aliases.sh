@@ -1,7 +1,6 @@
 alias please=sudo
 alias ls='ls --color=auto'
 alias restart='clear; exec zsh'
-alias tmux='systemd-run --scope --user tmux -2 -f "$XDG_CONFIG_HOME/tmux/tmux.conf"'
 alias grep='grep --color'
 alias la='ls -la'
 alias lA='ls -lA'
