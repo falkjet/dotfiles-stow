@@ -36,8 +36,8 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
 modules-left = i3
-modules-center = 
-modules-right = xbacklight pulseaudio xkeyboard battery temperature powermenu date 
+modules-center =
+modules-right = xbacklight pulseaudio xkeyboard battery temperature powermenu date
 
 tray-position = right
 tray-padding = 2

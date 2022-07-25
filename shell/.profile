@@ -31,7 +31,7 @@ export PATH=$GOPATH/bin:$PATH
 export LS_COLORS="di=38;5;39:ex=31:ln=34"
 
 ### lf ###
-export LF_COLORS="di=38;5;39:ex=31:ln=34" 
+export LF_COLORS="di=38;5;39:ex=31:ln=34"
 export LF_ICONS="di=:fi=:ln=:or=:ex=:\
 *.vimrc=:*.viminfo=:*.gitignore=:*.c=:*.cc=:*.clj=:*.coffee=:\
 *.cpp=:*.css=:*.d=:*.dart=:*.erl=:*.exs=:*.fs=:*.go=:*.h=:*.hh=:*.hpp=:*.hs=:*.html=:*.java=:\

@@ -1,5 +1,5 @@
 local which_key = require('which-key')
-    
+
 which_key.register({
     f = {
         name = 'File',
@@ -41,7 +41,7 @@ which_key.setup {
 
 local telescope = require 'telescope'
 local actions = require 'telescope.actions'
-local mappings = 
+local mappings =
 telescope.setup {
     defaults = {
         mappings = {
