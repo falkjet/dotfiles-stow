@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+if [ "$TERM" = xterm-kitty ]; then
+    file=$1
+    w=$(echo $2 - 1 | bc)
+    h=$3
+    x=$4
+    y=$5
+
+    if [[ "$( file -Lb --mime-type "$file")" =~ ^image ]]; then
+        kitty +icat --silent --transfer-mode file --place "${w}x${h}@${x}x${y}" "$file"
+        exit 1
+    fi
+fi
+
+case "$1" in
+    *.png|*.jpg|*.jpeg|*.mkv|*.mp4) mediainfo "$1" || echo 'failed to run mediainfo';;
+    *.zip|*.tar|*.tar.gz|*.tar.bz2|*.tar.xz) als "$1" || echo 'failed to run als (from atool)';;
+    *.md) glow -s dark "$1" || cat "$1";;
+    *.pdf) pdftotext "$1" - || cat "$1";;
+    *.json) cat "$1" | jq -C || cat "$1";;
+    *) highlight "$1" -O ansi --force || cat "$1";;
+esac

@@ -1,0 +1,102 @@
+###############
+### Options ###
+###############
+set shell bash
+set shellopts '-eu'
+set ifs "\n"
+set previewer ~/.config/lf/preview
+set cleaner ~/.config/lf/clean
+set drawbox true
+set icons true
+set scrolloff 10
+set promptfmt " \033[38;5;39m%w"
+
+##################
+### Open Files ###
+##################
+cmd open ${{
+    test -L $f && f=$(readlink -f $f)
+    case $(file --mime-type $f -b) in
+        text/*) $EDITOR $fx;;
+        *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
+    esac
+}}
+
+map o &mimeopen $f
+map O $mimeopen --ask $f
+
+###################
+### Delete File ###
+###################
+cmd rm $rm -rf $fx
+map d
+map dd rm
+
+###################
+### Create File ###
+###################
+cmd mkdir %{{
+    echo -n "Enter directory name: "
+    read fn
+    mkdir -p "$fn"
+}}
+cmd touch %{{
+    echo -n "Enter file name: "
+    read fn
+    touch "$fn"
+}}
+cmd mkscript %{{
+    echo -n "Enter script name: "
+    read fn
+    echo "#!/bin/sh" >> "$fn"
+    chmod +x "$fn"
+}}
+
+cmd mktexproject %{{
+    echo -n "Enter project name: "
+    read pn
+    mkdir "$pn"
+    fn="$pn/$(basename "$pn").tex"
+    name="$(getent passwd "$(whoami)" | cut -d: -f5)"
+    echo '\documentclass{article}' > "$fn"
+    echo '' >> "$fn"
+    echo "\\title{$(basename "$pn")}" >> "$fn"
+    echo "\\author{$name}" >> "$fn"
+    echo '\date{\today}' >> "$fn"
+    echo '' >> "$fn"
+    echo '\begin{document}' >> "$fn"
+    echo '    \maketitle' >> "$fn"
+    echo '\end{document}' >> "$fn"
+}}
+map m
+map md mkdir
+map mf touch
+map ms mkscript
+map ml mktexproject
+map . set hidden!
+
+########################
+### Cut, Copy, Paste ###
+########################
+map <c-c> copy
+map <c-x> cut
+map <c-v> paste
+map <esc> clear
+
+map <enter> shell
+
+####################
+### Execute file ###
+####################
+map x $$f
+map X !$f
+
+################
+### Archives ###
+################
+cmd extract $aunpack $f
+cmd tar %tar -caf "$(basename "$f")".tar.gz "$(basename "$f")"
+
+map a
+map at tar
+map ax extract
