@@ -1,3 +1,8 @@
+### .profile.d ###
+for file in ~/.profile.d/*; do
+    . "$file"
+done
+
 ### environment.d ###
 eval "$(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator | sed 's/^/export /')"
 
