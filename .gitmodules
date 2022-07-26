@@ -58,3 +58,6 @@
 [submodule "nvim/.local/share/nvim/site/pack/default/start/LuaSnip"]
 	path = nvim/.local/share/nvim/site/pack/default/start/LuaSnip
 	url = https://github.com/L3MON4D3/LuaSnip
+[submodule "nvim/.local/share/nvim/site/pack/default/start/lualine.nvim"]
+	path = nvim/.local/share/nvim/site/pack/default/start/lualine.nvim
+	url = https://github.com/nvim-lualine/lualine.nvim
