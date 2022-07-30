@@ -61,3 +61,6 @@
 [submodule "nvim/.local/share/nvim/site/pack/default/start/lualine.nvim"]
 	path = nvim/.local/share/nvim/site/pack/default/start/lualine.nvim
 	url = https://github.com/nvim-lualine/lualine.nvim
+[submodule "nvim/.local/share/nvim/site/pack/default/start/vim-jinja2-syntax"]
+	path = nvim/.local/share/nvim/site/pack/default/start/vim-jinja2-syntax
+	url = https://github.com/glench/vim-jinja2-syntax
