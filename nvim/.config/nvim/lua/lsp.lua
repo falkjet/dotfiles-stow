@@ -26,5 +26,6 @@ lspconfig.emmet_ls.setup{
     },
 }
 
+lspconfig.tsserver.setup{}
 
 lspconfig.svelte.setup{}
