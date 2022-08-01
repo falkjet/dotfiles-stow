@@ -18,3 +18,4 @@ require "gitsigns".setup()
 require "terminal"
 require "autocomplete"
 require "lsp"
+require "highlight"
