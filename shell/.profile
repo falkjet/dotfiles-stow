@@ -14,7 +14,7 @@ export EDITOR=nvim
 alias vim=nvim
 
 ### Golang ###
-export GOPATH=$HOME/.golang
+export GOPATH=$HOME/.local/share/golang
 export PATH=$GOPATH/bin:$PATH
 
 ### ls ###
