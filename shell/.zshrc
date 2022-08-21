@@ -9,6 +9,7 @@ fi
 ### oh my zsh ###
 export ZSH="$HOME/.local/share/ohmyzsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
+DISABLE_AUTO_UPDATE=true
 
 # plugins
 plugins=(
