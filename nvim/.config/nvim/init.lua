@@ -19,3 +19,5 @@ require "terminal"
 require "autocomplete"
 require "lsp"
 require "highlight"
+
+vim.cmd[[ autocmd BufWritePre * :%s/\s\+$//e ]]
