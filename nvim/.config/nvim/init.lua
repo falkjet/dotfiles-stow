@@ -19,5 +19,6 @@ require "terminal"
 require "autocomplete"
 require "lsp"
 require "highlight"
+vim.fn["mkdp#util#install"]()
 
 vim.cmd[[ autocmd BufWritePre * :%s/\s\+$//e ]]
