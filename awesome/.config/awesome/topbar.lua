@@ -130,7 +130,7 @@ M.setup = function(s)
                 keyboardlayout,
                 widgets.mpris(),
                 widgets.battery(),
-                widgets.volume(),
+                widgets.volume{invert_scroll=true},
                 textclock,
                 wibox.widget.systray(),
                 s.layoutbox,

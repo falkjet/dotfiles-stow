@@ -9,7 +9,9 @@ function volume_widget:force_update()
     self._timer:emit_signal("timeout")
 end
 
-local function new()
+local function new(args)
+    args = args or {}
+    local invert_scroll = args.invert_scroll or false
     local w = wibox.widget.textbox()
     gears.table.crush(w, volume_widget, true)
     local icons = {muted="婢 ", "奄 ", "奔 ", "墳 "}
@@ -21,6 +23,26 @@ local function new()
                 function()
                     awful.spawn[[pamixer -t]]
                     w:force_update()
+                end
+            ),
+            awful.button(
+                {}, 4,
+                function()
+                    if invert_scroll then
+                        awful.spawn[[pamixer -d 1]]; w:force_update()
+                    else
+                        awful.spawn[[pamixer -i 1]]; w:force_update()
+                    end
+                end
+            ),
+            awful.button(
+                {}, 5,
+                function()
+                    if invert_scroll then
+                        awful.spawn[[pamixer -i 1]]; w:force_update()
+                    else
+                        awful.spawn[[pamixer -d 1]]; w:force_update()
+                    end
                 end
             )
         )
