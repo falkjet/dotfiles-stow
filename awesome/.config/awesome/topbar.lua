@@ -1,6 +1,7 @@
 local awful = require"awful";
 local wibox = require"wibox";
 local gears = require"gears";
+local widgets = require"widgets"
 
 local taglist_buttons = gears.table.join(
     awful.button({}, 1, function(t) t:view_only() end),
@@ -127,6 +128,7 @@ M.setup = function(s)
                 layout = wibox.layout.fixed.horizontal,
                 spacing = 10,
                 keyboardlayout,
+                widgets.volume(),
                 textclock,
                 wibox.widget.systray(),
                 s.layoutbox,
