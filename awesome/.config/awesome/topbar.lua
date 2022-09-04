@@ -129,6 +129,7 @@ M.setup = function(s)
                 spacing = 10,
                 keyboardlayout,
                 widgets.mpris(),
+                widgets.battery(),
                 widgets.volume(),
                 textclock,
                 wibox.widget.systray(),
