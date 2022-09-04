@@ -7,7 +7,65 @@ local hotkeys_popup = require"awful.hotkeys_popup"
 
 local modkey = config.modkey
 
+local mediakeys = gears.table.join(
+    awful.key(
+        {}, "XF86MonBrightnessUp",
+        function()
+            awful.spawn.with_shell[[xbacklight +5 && notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"]]
+        end
+    ),
+    awful.key(
+        {}, "XF86MonBrightnessDown",
+        function()
+            awful.spawn.with_shell[[xbacklight -5 && notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"]]
+        end
+    ),
+    awful.key(
+        {}, "XF86AudioRaiseVolume",
+        function()
+            awful.spawn[[pamixer -i 10]]
+        end
+    ),
+    awful.key(
+        {}, "XF86AudioLowerVolume",
+        function()
+            awful.spawn[[pamixer -d 10]]
+        end
+    ),
+    awful.key(
+        {}, "XF86AudioMute",
+        function()
+            awful.spawn[[pamixer -t]]
+        end
+    ),
+    awful.key(
+        {}, "XF86AudioPlay",
+        function()
+            awful.spawn[[playerctl play]]
+        end
+    ),
+    awful.key(
+        {}, "XF86AudioPause",
+        function()
+            awful.spawn[[playerctl pause]]
+        end
+    ),
+    awful.key(
+        {}, "XF86AudioNext",
+        function()
+            awful.spawn[[playerctl next]]
+        end
+    ),
+    awful.key(
+        {}, "XF86AudioPrev",
+        function()
+            awful.spawn[[playerctl previous]]
+        end
+    )
+)
+
 local globalkeys = gears.table.join(
+    mediakeys,
     awful.key(
         { modkey }, "s",
         hotkeys_popup.show_help,
