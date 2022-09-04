@@ -15,7 +15,7 @@ local globalkeys = gears.table.join(
     ),
     awful.key(
         { modkey }, "b",
-        function() awful.spawn("flatpak run com.brave.Browser") end,
+        function() awful.spawn(config.browser) end,
         { description = "Open a browser", group = "launcher" }
     ),
     awful.key(
