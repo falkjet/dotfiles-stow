@@ -29,4 +29,7 @@ lspconfig.emmet_ls.setup{
 lspconfig.tsserver.setup{}
 
 lspconfig.svelte.setup{}
+
+lspconfig.clangd.setup{}
+
 lspconfig.vala_ls.setup{}
