@@ -73,3 +73,6 @@
 [submodule "nvim/.local/share/nvim/site/pack/default/start/vim-vala"]
 	path = nvim/.local/share/nvim/site/pack/default/start/vim-vala
 	url = https://github.com/tkztmk/vim-vala
+[submodule "nvim/.local/share/nvim/site/pack/default/start/nvim-autopairs"]
+	path = nvim/.local/share/nvim/site/pack/default/start/nvim-autopairs
+	url = https://github.com/windwp/nvim-autopairs

@@ -12,6 +12,7 @@ vim.o.updatetime = 300
 vim.o.signcolumn = 'number'
 vim.o.timeoutlen = 300
 
+require "nvim-autopairs".setup{}
 require "theme"
 require "keymap"
 require "gitsigns".setup()
