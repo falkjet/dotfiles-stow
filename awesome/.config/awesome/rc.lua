@@ -66,7 +66,7 @@ local topbar = require"topbar"
 
 awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
-    awful.tag({ "wun", "too", "tree", "fow-er", "fife", "six", "sev-en", "ait", "nin-er" }, s, awful.layout.layouts[1])
+    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
 
     topbar.setup(s)
 end)
