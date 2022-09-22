@@ -33,3 +33,5 @@ lspconfig.svelte.setup{}
 lspconfig.clangd.setup{}
 
 lspconfig.vala_ls.setup{}
+
+lspconfig.rust_analyzer.setup{}
