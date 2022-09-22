@@ -11,6 +11,7 @@ vim.o.expandtab = true
 vim.o.updatetime = 300
 vim.o.signcolumn = 'number'
 vim.o.timeoutlen = 300
+vim.g.vimtex_view_general_viewer = '/bin/evince'
 
 require "nvim-autopairs".setup{}
 require "theme"
