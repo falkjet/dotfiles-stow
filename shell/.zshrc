@@ -58,6 +58,11 @@ if command -v zoxide > /dev/null; then
     eval "$(zoxide init zsh --cmd c)"
 fi
 
+### .zshrc.d ###
+for file in ~/.zshrc.d/*.zsh; do
+    source $file
+done
+
 ### autocompletion ###
 autoload compinit
 compinit -y

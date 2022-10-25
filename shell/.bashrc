@@ -14,6 +14,12 @@ if command -v zoxide >/dev/null; then
     eval "$(zoxide init posix --cmd c --hook prompt)"
 fi
 
+### .bashrc.d ###
+shopt -s nullglob
+for file in ~/.bashrc.d/*.{sh,bash}; do
+    source "$file"
+done
+
 ### autocompletion ###
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 complete -cf sudo
