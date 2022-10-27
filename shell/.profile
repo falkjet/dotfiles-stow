@@ -18,7 +18,7 @@ export GOPATH=$HOME/.local/share/golang
 export PATH=$GOPATH/bin:$PATH
 
 ### ls ###
-export LS_COLORS="di=38;5;39:ex=31:ln=34"
+export LS_COLORS="di=38;5;39:ex=31:ln=38"
 
 ### nvm ###
 export NVM_DIR="$HOME/.local/share/nvm"
