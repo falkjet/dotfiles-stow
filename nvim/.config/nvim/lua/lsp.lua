@@ -42,3 +42,5 @@ lspconfig.clangd.setup{}
 lspconfig.vala_ls.setup{}
 
 lspconfig.rust_analyzer.setup{}
+
+lspconfig.gopls.setup{ on_attach = lspformat.on_attach }
