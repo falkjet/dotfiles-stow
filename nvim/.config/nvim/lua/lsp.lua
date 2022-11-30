@@ -29,7 +29,11 @@ lspconfig.emmet_ls.setup{
     },
 }
 
+lspconfig.tailwindcss.setup{}
+
 lspconfig.tsserver.setup{}
+
+lspconfig.volar.setup{}
 
 lspconfig.svelte.setup{}
 
