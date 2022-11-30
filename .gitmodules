@@ -76,3 +76,6 @@
 [submodule "nvim/.local/share/nvim/site/pack/default/start/nvim-autopairs"]
 	path = nvim/.local/share/nvim/site/pack/default/start/nvim-autopairs
 	url = https://github.com/windwp/nvim-autopairs
+[submodule "nvim/.local/share/nvim/site/pack/default/start/lsp-format.nvim"]
+	path = nvim/.local/share/nvim/site/pack/default/start/lsp-format.nvim
+	url = https://github.com/lukas-reineke/lsp-format.nvim

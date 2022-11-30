@@ -1,4 +1,7 @@
 local lspconfig = require "lspconfig"
+local lspformat = require "lsp-format"
+
+lspformat.setup {}
 
 local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
