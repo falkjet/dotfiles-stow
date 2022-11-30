@@ -16,6 +16,13 @@ which_key.register({
         N = {'<cmd>BufferMoveNext<cr>', 'Next'},
         P = {'<cmd>BufferMovePrev<cr>', 'Prev'},
         b = {'<cmd>Telescope buffers<cr>', 'Switch Buffer'},
+        x = {'<cmd>BufferClose<cr>', 'Close buffer'}
+    },
+    c = {
+        name = 'Code',
+        r = {vim.lsp.buf.rename, "Rename symbol"},
+        f = {vim.lsp.buf.format, "Format Code"},
+        h = {vim.lsp.buf.hover, "Hover symbol"}
     },
     ['1'] = {'<cmd>BufferGoto 1<cr>', 'Buffer 1'},
     ['2'] = {'<cmd>BufferGoto 2<cr>', 'Buffer 2'},
@@ -29,6 +36,19 @@ which_key.register({
     ['0'] = {'<cmd>BufferGoto 10<cr>', 'Buffer 10'},
     Q = {'<cmd>qa!<cr>', 'Quit'},
 }, {prefix = '<leader>'})
+
+which_key.register({
+    ["<c-v>"] = {'<c-o>"+P', "Paste"},
+    ["<c-s>"] = {'<c-o>:w<cr>', "Save"},
+}, {
+    mode = "i",
+})
+
+which_key.register({
+    ["<c-c>"] = {'"+y', "Copy"},
+}, {
+    mode = "v",
+})
 
 which_key.setup {
     key_labels = {
