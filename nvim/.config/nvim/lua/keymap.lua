@@ -8,6 +8,7 @@ which_key.register({
         r = {'<cmd>Telescope oldfiles<cr>', 'Open Recent File'},
         n = {'<cmd>enew<cr>', 'New'},
         s = {'<cmd>w<cr>', 'Save'},
+        S = {'<cmd>SudaWrite<cr>', 'Save As Root'},
     },
     b = {
         name = 'Buffer',
