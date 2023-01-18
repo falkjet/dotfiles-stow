@@ -34,6 +34,13 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.tabSize": 2,
     },
+    "omnisharp.useModernNet": false,
+    "csharp.inlayHints.parameters.enabled": false,
+    "csharp.inlayHints.types.enabled": false,
+    "csharp.referencesCodeLens.enabled": false,
+    "[csharp]": {
+        "editor.formatOnSave": true
+    },
     "[java]" :{
         "editor.inlayHints.enabled": "off",
     },
