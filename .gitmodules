@@ -82,3 +82,6 @@
 [submodule "nvim/.local/share/nvim/site/pack/default/start/suda.vim"]
 	path = nvim/.local/share/nvim/site/pack/default/start/suda.vim
 	url = https://github.com/lambdalisue/suda.vim
+[submodule "nvim/.local/share/nvim/site/pack/default/start/mason.nvim"]
+	path = nvim/.local/share/nvim/site/pack/default/start/mason.nvim
+	url = https://github.com/williamboman/mason.nvim
