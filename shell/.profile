@@ -11,7 +11,6 @@ XDG_CONFIG_HOME="$HOME/.config"
 
 ### neovim ###
 export EDITOR=nvim
-alias vim=nvim
 
 ### Golang ###
 export GOPATH=$HOME/.local/share/golang
