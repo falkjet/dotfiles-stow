@@ -21,7 +21,7 @@ export LS_COLORS="di=38;5;39:ex=31:ln=38"
 
 ### nvm ###
 export NVM_DIR="$HOME/.local/share/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use
 
 ### Cargo ###
 export CARGO_HOME="$HOME/.local/share/cargo"
