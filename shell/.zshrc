@@ -12,17 +12,6 @@ stty echo
 [[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
 
 
-### oh my zsh ###
-export ZSH="$HOME/.local/share/ohmyzsh"
-DISABLE_AUTO_UPDATE=true
-
-# plugins
-plugins=(
-    git
-)
-
-[[ -e $ZSH/oh-my-zsh.sh ]] && source $ZSH/oh-my-zsh.sh
-
 ### history
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
