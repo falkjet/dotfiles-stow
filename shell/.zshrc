@@ -7,22 +7,13 @@ if command -v fastfetch > /dev/null && [ "$TERM_PROGRAM" != vscode ]; then
     fi
 fi
 stty echo
-# p10k instant prompt
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 
 ### source .profile
 [[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
 
-### p10k ###
-if [[ -f ~/.p10k.zsh ]]; then
-  source ~/.p10k.zsh
-fi
 
 ### oh my zsh ###
 export ZSH="$HOME/.local/share/ohmyzsh"
-ZSH_THEME="powerlevel10k/powerlevel10k"
 DISABLE_AUTO_UPDATE=true
 
 # plugins
@@ -48,13 +39,8 @@ bindkey "^[[1;5C" forward-word
 WORDCHARS=''
 
 ### Prompt ###
-if [[ -n ${ZSH_THEME:+1} ]]; then
-  # prompt is set by oh my zsh
-elif [[ -e /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme ]]; then
-  USE_POWERLINE="true"
-  source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-elif command -v starship > /dev/null; then
-  source <(/usr/bin/starship init zsh --print-full-init)
+if command -v starship > /dev/null; then
+    . <(starship init zsh --print-full-init)
 fi
 
 ### Zoxide ###
