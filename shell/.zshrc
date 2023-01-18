@@ -1,6 +1,10 @@
 stty -echo
-if command -v neofetch > /dev/null; then
-    neofetch
+if command -v fastfetch > /dev/null && [ "$TERM_PROGRAM" != vscode ]; then
+    if command -v lolcat > /dev/null; then
+        fastfetch | lolcat
+    else
+        fastfetch
+    fi
 fi
 stty echo
 # p10k instant prompt
