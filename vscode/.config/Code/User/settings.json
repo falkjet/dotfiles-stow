@@ -1,5 +1,4 @@
 {
-    "workbench.iconTheme": "material-icon-theme",
     "terminal.integrated.allowChords": false,
     "terminal.integrated.commandsToSkipShell": [
         "-workbench.action.quickOpen"
