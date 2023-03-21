@@ -4,7 +4,9 @@ for file in ~/.profile.d/*.sh; do
 done
 
 ### environment.d ###
-eval "$(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator | sed 's/^/export /')"
+if [ -e "/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator" ]; then
+	eval "$(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator | sed 's/^/export /')"
+fi
 
 ### XDG variables ###
 XDG_CONFIG_HOME="$HOME/.config"
