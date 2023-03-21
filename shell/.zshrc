@@ -42,6 +42,10 @@ for file in ~/.zshrc.d/*.zsh; do
     source $file
 done
 
+### fpath ###
+fpath+=($HOME/.local/share/zsh/functions)
+
+
 ### autocompletion ###
 autoload compinit
 compinit -y
