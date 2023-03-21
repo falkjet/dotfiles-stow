@@ -1,7 +1,7 @@
 stty -echo
 if command -v fastfetch > /dev/null && [ "$TERM_PROGRAM" != vscode ]; then
     if command -v lolcat > /dev/null; then
-        fastfetch | lolcat
+        fastfetch | lolcat --seed 60 --freq 0.05
     else
         fastfetch
     fi
