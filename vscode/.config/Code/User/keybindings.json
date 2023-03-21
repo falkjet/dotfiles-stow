@@ -1,6 +1,10 @@
 // Place your key bindings in this file to override the defaults
 [
     {
+        "key": "shift+f10",
+        "command": "macros.terminalExecLast"
+    },
+    {
         "key": "ctrl+`",
         "command": "workbench.action.splitEditor"
     },

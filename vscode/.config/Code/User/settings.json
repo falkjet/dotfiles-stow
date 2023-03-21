@@ -1,6 +1,16 @@
 {
+    "macros": {
+        "terminalExecLast": [
+            "workbench.action.terminal.focus",
+            {
+                "command": "workbench.action.terminal.sendSequence",
+                "args": { "text": "!!\n" }
+            }
+        ]
+    },
     "terminal.integrated.allowChords": false,
     "terminal.integrated.commandsToSkipShell": [
+        "macros.terminalExecLast",
         "-workbench.action.quickOpen"
     ],
     "editor.fontFamily": "JetBrainsMono Nerd Font",
