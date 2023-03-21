@@ -46,7 +46,7 @@ if [ -e "/home/linuxbrew/" ]; then
 fi
 
 ### ipython ###
-export IPYTHONDIR="~/.config/ipython"
+export IPYTHONDIR="$HOME/.config/ipython"
 
 ### Zsh ###
 export ZSH="$HOME/.local/share/oh-my-zsh"
