@@ -19,7 +19,24 @@
         "**/xpacks/**"
     ],
     "git.confirmSync": false,
-    "workbench.colorTheme": "Community Material Theme Ocean",
+    "workbench.colorTheme": "One Dark Pro Darker",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "comment",
+                "settings": {
+                    "foreground": "#ffcc00",
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": "constant",
+                "settings": {
+                    "foreground": "#ff0000"
+                }
+            }
+        ]
+    },
     "haskell.manageHLS": "GHCup",
     "editor.rulers": [80],
     "rewrap.autoWrap.enabled": true,
