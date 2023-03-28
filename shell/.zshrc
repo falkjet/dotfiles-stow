@@ -1,3 +1,6 @@
+### source .profile
+[[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
+
 stty -echo
 if command -v fastfetch > /dev/null && [ "$TERM_PROGRAM" != vscode ]; then
     if command -v lolcat > /dev/null; then
@@ -7,9 +10,6 @@ if command -v fastfetch > /dev/null && [ "$TERM_PROGRAM" != vscode ]; then
     fi
 fi
 stty echo
-
-### source .profile
-[[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
 
 
 ### history
