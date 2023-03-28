@@ -5,7 +5,7 @@ done
 
 ### environment.d ###
 if [ -e "/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator" ]; then
-	eval "$(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator | sed 's/^/export /')"
+	eval "$(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator | grep -v '^HOME' | sed 's/^/export /')"
 fi
 
 ### XDG variables ###
