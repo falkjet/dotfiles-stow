@@ -1,0 +1,23 @@
+[global_config]
+[keybindings]
+[profiles]
+  [[default]]
+    background_darkness = 0.82
+    background_type = transparent
+    font = JetBrainsMono Nerd Font 10
+    scrollbar_position = hidden
+    use_system_font = False
+    title_transmit_bg_color = "#000000"
+    title_receive_bg_color = "#000000"
+    title_inactive_fg_color = "#9a9996"
+    title_inactive_bg_color = "#000000"
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+[plugins]
