@@ -1,0 +1,176 @@
+set $mod Mod4
+
+### Gaps ###
+smart_gaps on
+gaps inner 0
+
+### Background processes ###
+exec swayidle -w timeout 300 'locksway'
+exec swaybg -i ~/.config/sway/wallpaper -m fill
+exec greenclip daemon
+exec i3-battery-popup -t 1m
+exec mako
+exec xrdb ~/.Xresources
+exec sway_inactive_opacity
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec emacs --daemon
+
+### Window specific configuration ###
+for_window [class="^.*"] border none
+for_window [title="^.*"] border none
+for_window [class="OpenGL"] floating enable
+for_window [class="PrismLauncher"] floating enable
+
+### Font ###
+font pango:monospace 8
+
+### Input ###
+input * xkb_options ctrl:nocaps
+input * xkb_layout us
+input * xkb_variant altgr-intl
+input * scroll_button disable
+input type:touchpad natural_scroll enable
+input type:pointer accel_profile flat
+input * dwt disable
+
+### Screenshot ###
+bindsym Print exec grim -t png - | wl-copy -t image/png
+bindsym Shift+Print exec grim -t png -g "$(slurp -d)" - | wl-copy -t image/png
+
+### Brightness ###
+bindsym XF86MonBrightnessUp exec brightnessctl s 500+
+bindsym XF86MonBrightnessDown exec brightnessctl s 500-
+
+### Volume control ###
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+### Floating modifier ###
+floating_modifier $mod
+
+### Launch ###
+bindsym $mod+Return exec ~/.config/sway/terminal
+bindsym $mod+b exec brave
+bindsym $mod+Shift+x exec xkill
+bindsym $mod+c exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+bindsym $mod+d exec rofi -show run
+bindsym $mod+space exec rofi -modi drun -show drun
+bindsym $mod+m exec rofimoji
+bindsym $mod+p exec rofi-pass
+
+### Kill focused window ###
+bindsym $mod+q kill
+bindsym Mod1+f4 kill
+
+### Lock screen ###
+bindsym ctrl+$mod+l exec locksway
+
+### Switch window ###
+bindsym Mod1+Tab focus next
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+### Move window ###
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+mod1+Right move workspace to output right
+bindsym $mod+mod1+Left move workspace to output left
+bindsym $mod+mod1+Up move workspace to output up
+bindsym $mod+mod1+Down move workspace to output down
+
+### Layout ###
+# bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+f fullscreen toggle
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+a focus parent
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+### Switch to workspace ###
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+### Move to workspace ###
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+### Exit an reload ###
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r reload
+bindsym $mod+Shift+e exec "swaynag -m 'do you want to exit sway' -z 'exit sway' 'swaymsg exit' -s cancel"
+
+### Resize ###
+bindsym $mod+r mode "resize"
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+        
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+### Waybar ###
+bar {
+        swaybar_command waybar
+}
+
+### Colors ###
+#                             highlight boreder text
+client.focused                  #00afff #00afff #000000 #dddddd
+client.focused_inactive         #282a36 #282a36 #888888 #292d2e
+client.unfocused                #282a36 #282a36 #888888 #292d2e
+client.urgent                   #2f343a #900000 #ffffff #900000
