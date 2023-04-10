@@ -14,4 +14,4 @@ alias config='git --git-dir="$HOME"/dotfiles --work-tree="$HOME"'
 alias md='glow -p -w $COLUMNS'
 alias lg='lazygit'
 alias cls='clear'
-alias open="handlr open"
+alias open="xdg-open 2>/dev/null >/dev/null"
