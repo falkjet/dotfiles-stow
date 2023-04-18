@@ -19,7 +19,7 @@
         "**/xpacks/**"
     ],
     "git.confirmSync": false,
-    "workbench.colorTheme": "One Dark Pro Darker",
+    "workbench.colorTheme": "One Dark Darker",
     "editor.tokenColorCustomizations": {
         "textMateRules": [
             {
