@@ -41,6 +41,13 @@
     "editor.rulers": [80],
     "rewrap.autoWrap.enabled": true,
     "emmet.includeLanguages": {
+        "javascript": "html",
+        "php": "html",
+        "twig": "html",
+        "liquid": "html",
+        "vue": "html",
+        "nunjucks": "html",
+        "markdown": "html",
         "django-html": "html",
         "erb": "html",
         "html.erb": "html"
