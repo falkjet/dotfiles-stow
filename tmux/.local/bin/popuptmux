@@ -1,0 +1,13 @@
+#!/bin/sh
+width=${2:-80%}
+height=${2:-80%}
+if [ "$(tmux display-message -p -F "#{session_name}")" = "popup" ];then
+    tmux detach-client
+else
+    if ! tmux list-windows -t popup 1>/dev/null 2>/dev/null; then
+        tmux new -s popup -d
+        tmux set -t popup window-style 'bg=color232'
+        tmux set -t popup status-style 'bg=color232'
+    fi
+    tmux popup -d '#{pane_current_path}' -xC -yC -w$width -h$height -E "tmux attach -t popup"
+fi
