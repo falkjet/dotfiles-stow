@@ -15,3 +15,4 @@ alias md='glow -p -w $COLUMNS'
 alias lg='lazygit'
 alias cls='clear'
 alias open="xdg-open 2>/dev/null >/dev/null"
+command -v bat >/dev/null && alias cat='bat -p'
