@@ -9,10 +9,10 @@ case "$(tmux display-message -p -F "#{session_name}" 2>/dev/null)" in
     *)
         name="popup-$(tmux display-message -p -F "#{session_name}" 2>/dev/null)"
         if ! tmux list-windows -t "$name" 1>/dev/null 2>/dev/null; then
-            tmux new -s "$name" -d
+            tmux new -s "$name" -c '#{pane_current_path}' -d
             tmux set -t "$name" window-style 'bg=color232'
             tmux set -t "$name" status-style 'bg=color232'
             tmux set-hook session-closed "kill-session -t $name"
         fi
-        tmux popup -d '#{pane_current_path}' -xC -yC -w$width -h$height -E "tmux attach -t $name"
+        tmux popup -d '#{pane_current_path}' -xC -yC -w"$width" -h"$height" -E "tmux attach -t $name"
 esac
