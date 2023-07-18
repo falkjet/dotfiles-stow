@@ -8,6 +8,8 @@ notify = true
 "Ctrl+l" = "focus library"
 "Ctrl+r" = "focus cover"
 "Ctrl+t" = "reload"
+"q" = "back"
+"Esc" = "back"
 
 [theme] #dracula
 background = "background"
