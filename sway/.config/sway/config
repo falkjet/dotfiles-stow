@@ -9,7 +9,7 @@ exec swayidle -w timeout 300 'locksway'
 exec swaybg -i ~/.config/sway/wallpaper -m fill
 exec greenclip daemon
 exec i3-battery-popup -t 1m
-exec mako
+exec swaync
 exec xrdb ~/.Xresources
 exec sway_inactive_opacity
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
