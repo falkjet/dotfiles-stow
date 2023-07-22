@@ -76,6 +76,48 @@
     "[csharp]": {
         "editor.formatOnSave": true
     },
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["K"],
+            "commands": ["editor.action.showHover"],
+            "silent": "true"
+        },
+        {
+            "before": ["<leader>", "f"],
+            "commands": ["workbench.action.quickOpen"],
+            "silent": "true"
+        },
+        {
+            "before": [","],
+            "commands": ["removeSecondaryCursors"]
+        },
+        {
+            "before": ["<leader>", "a"],
+            "commands": ["editor.action.quickFix"]
+        },
+        {
+            "before": ["]", "d"],
+            "command": "editor.action.marker.next"
+        },
+        {
+            "before": ["[", "d"],
+            "command": "editor.action.marker.prev"
+        }
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [","],
+            "commands": ["removeSecondaryCursors"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.handleKeys": {
+        "<C-b>": false,
+        "<C-w>": false,
+        "<C-d>": false,
+        "<C-f>": false
+    },
     "[java]" :{
         "editor.inlayHints.enabled": "off",
     },
