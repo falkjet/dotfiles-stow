@@ -57,6 +57,8 @@
     },
     "explorer.autoReveal": false,
     "rust-analyzer.inlayHints.typeHints.enable": false,
+    "rust-analyzer.inlayHints.chainingHints.enable": false,
+    "rust-analyzer.inlayHints.parameterHints.enable": false,
     "editor.minimap.enabled": false,
     "[typescriptreact][javascriptreact][typescript][javascript][vue]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
