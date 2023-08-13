@@ -2,11 +2,13 @@
 [[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
 
 stty -echo
-if command -v fastfetch > /dev/null && [ "$TERM_PROGRAM" != vscode ]; then
-    if command -v lolcat > /dev/null; then
-        fastfetch | lolcat --seed 60 --freq 0.05
-    else
-        fastfetch
+if [ ! ${SHELL_NO_BANNER:+1} ]; then
+    if command -v fastfetch > /dev/null && [ "$TERM_PROGRAM" != vscode ]; then
+        if command -v lolcat > /dev/null; then
+            fastfetch | lolcat --seed 60 --freq 0.05
+        else
+            fastfetch
+        fi
     fi
 fi
 stty echo
@@ -49,3 +51,7 @@ fpath+=($HOME/.local/share/zsh/functions)
 ### autocompletion ###
 autoload compinit
 compinit -y
+
+
+
+
