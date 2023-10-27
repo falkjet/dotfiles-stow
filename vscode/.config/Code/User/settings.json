@@ -121,4 +121,8 @@
     "[java]" :{
         "editor.inlayHints.enabled": "off",
     },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
 }
