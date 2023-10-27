@@ -1,5 +1,4 @@
 alias please=sudo
-alias ls='ls --color=auto'
 alias restart='clear; exec zsh'
 alias grep='grep --color'
 alias la='ls -la'
@@ -16,3 +15,15 @@ alias lg='lazygit'
 alias cls='clear'
 alias open="xdg-open 2>/dev/null >/dev/null"
 command -v bat >/dev/null && alias cat='bat -p'
+
+# shellcheck disable=2010
+if command -v eza >/dev/null; then
+    alias ls='eza --color=auto --group-directories-first --icons'
+    alias ll='eza --color=auto --group-directories-first --icons -l'
+elif /bin/ls --help | grep -- --group-directories-first >/dev/null; then
+    alias ls='ls --color=auto --group-directories-first'
+    alias ll='ls --color=auto --group-directories-first -l'
+else
+    alias ls='ls --color=auto'
+    alias ll='ls --color=auto -l'
+fi
