@@ -118,7 +118,7 @@
         "<C-d>": false,
         "<C-f>": false
     },
-    "[java]" :{
+    "[java]": {
         "editor.inlayHints.enabled": "off",
     },
     "[html]": {
