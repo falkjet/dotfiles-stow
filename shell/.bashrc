@@ -1,3 +1,4 @@
+#!/usr/bin/bash
 [[ $- != *i* ]] && return
 PS1='\u@\h \W $ '
 
