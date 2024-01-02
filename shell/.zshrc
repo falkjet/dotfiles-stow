@@ -23,7 +23,7 @@ fi
 
 ### Zoxide ###
 if command -v zoxide > /dev/null; then
-    eval "$(zoxide init zsh --cmd c)"
+    . <(zoxide init zsh --cmd c)
 fi
 
 ### .zshrc.d ###
