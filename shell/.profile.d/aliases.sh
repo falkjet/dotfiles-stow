@@ -1,3 +1,4 @@
+#!/bin/sh
 alias sudo='sudo --preserve-env=TERMINFO,EDITOR'
 alias please=sudo
 alias restart='clear; exec zsh'
