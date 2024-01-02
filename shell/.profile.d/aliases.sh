@@ -18,8 +18,8 @@ command -v bat >/dev/null && alias cat='bat -p'
 
 # shellcheck disable=2010
 if command -v eza >/dev/null; then
-    alias ls='eza --color=auto --group-directories-first --icons'
-    alias ll='eza --color=auto --group-directories-first --icons -l'
+    alias ls='eza --color=auto --group-directories-first --icons=auto'
+    alias ll='eza --color=auto --group-directories-first --icons=auto -l'
 elif /bin/ls --help | grep -- --group-directories-first >/dev/null; then
     alias ls='ls --color=auto --group-directories-first'
     alias ll='ls --color=auto --group-directories-first -l'
