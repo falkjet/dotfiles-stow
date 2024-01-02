@@ -1,6 +1,7 @@
 #!/bin/sh
 
-source ~/.profile
+# shellcheck disable=SC1090
+. ~/.profile
 
 if [[ -n "`which luarocks 2>/dev/null`" ]]; then
     eval `luarocks path --bin`
