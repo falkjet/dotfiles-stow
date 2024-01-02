@@ -56,7 +56,7 @@ export ZSH="$HOME/.local/share/oh-my-zsh"
 
 ### Man ###
 export MANROFFOPT="-c"
-export MANPAGER="sh -c 'col -bx | bat -plman'"
+export MANPAGER="sh -c 'sed \"s/\\\x1b\\\[[0-9]*m//g\" | col -bx | bat -plman'"
 
 ### Snap ###
 if [ -e "/snap/bin" ]; then
