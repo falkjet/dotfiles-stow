@@ -1,5 +1,6 @@
 ### .profile.d ###
 for file in ~/.profile.d/*.sh; do
+    # shellcheck disable=1090
     . "$file"
 done
 
@@ -9,7 +10,7 @@ if [ -e "/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-g
 fi
 
 ### XDG variables ###
-XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 ### neovim ###
 export EDITOR=nvim
@@ -23,6 +24,7 @@ export LS_COLORS="di=38;5;39:ex=31:ln=38"
 
 ### nvm ###
 export NVM_DIR="$HOME/.local/share/nvm"
+# shellcheck disable=SC1091
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use
 
 ### Cargo ###
@@ -36,7 +38,8 @@ export PASSWORD_STORE_DIR=$HOME/.local/share/password-storage
 
 ### lf file manager ###
 if [ -e "/usr/share/lf/lfcd.sh" ]; then
-	source "/usr/share/lf/lfcd.sh"
+	# shellcheck disable=SC1091
+	. "/usr/share/lf/lfcd.sh"
 	alias lf=lfcd
 fi
 
