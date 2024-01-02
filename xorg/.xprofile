@@ -3,10 +3,6 @@
 # shellcheck disable=SC1090
 . ~/.profile
 
-if [[ -n "`which luarocks 2>/dev/null`" ]]; then
-    eval `luarocks path --bin`
-fi
-
 xinput set-prop 'Elan TrackPoint' 'libinput Button Scrolling Button' 0
 xinput set-prop 'Elan Touchpad' 'libinput Natural Scrolling Enabled' 1
 xinput set-prop 'Elan Touchpad' 'libinput Disable While Typing Enabled' 0
