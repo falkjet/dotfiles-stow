@@ -20,7 +20,6 @@ alias pypy=pypy3
 alias tectonic='tectonic -X'
 command -v bat >/dev/null && alias cat='bat -p'
 
-# shellcheck disable=2010
 if command -v eza >/dev/null; then
     alias ls='eza --color=auto --group-directories-first --icons=auto'
     alias ll='eza --color=auto --group-directories-first --icons=auto -l'

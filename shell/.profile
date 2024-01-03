@@ -1,3 +1,5 @@
+#!/bin/sh
+
 pathadd() {
     if [ -d "$1" ]; then
 	case ":$PATH:" in
@@ -26,7 +28,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export EDITOR=nvim
 
 ### Golang ###
-export GOPATH=$HOME/.local/share/golang
+export GOPATH="$HOME/.local/share/golang"
 pathadd "$GOPATH/bin"
 
 ### ls ###
@@ -34,8 +36,6 @@ export LS_COLORS="di=38;5;39:ex=31:ln=38"
 
 ### nvm ###
 export NVM_DIR="$HOME/.local/share/nvm"
-# shellcheck disable=SC1091
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use
 
 ### Cargo ###
 export CARGO_HOME="$HOME/.local/share/cargo"
@@ -46,7 +46,7 @@ pathadd "$HOME/Scripts"
 pathadd "$HOME/.local/bin"
 
 ### Pass ###
-export PASSWORD_STORE_DIR=$HOME/.local/share/password-storage
+export PASSWORD_STORE_DIR="$HOME/.local/share/password-storage"
 
 ### lf file manager ###
 if [ -e "/usr/share/lf/lfcd.sh" ]; then
