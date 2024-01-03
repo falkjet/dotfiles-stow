@@ -16,6 +16,8 @@ alias md='glow -p -w $COLUMNS'
 alias lg='lazygit'
 alias cls='clear'
 alias open="xdg-open 2>/dev/null >/dev/null"
+alias pypy=pypy3
+alias tectonic='tectonic -X'
 command -v bat >/dev/null && alias cat='bat -p'
 
 # shellcheck disable=2010
@@ -28,4 +30,12 @@ elif /bin/ls --help | grep -- --group-directories-first >/dev/null; then
 else
     alias ls='ls --color=auto'
     alias ll='ls --color=auto -l'
+fi
+
+if [ "$TERM" = xterm-kitty ]; then
+    alias ssh='kitty +kitten ssh'
+fi
+
+if [ "$(ps -p1 -o comm=)" = systemd ]; then
+    alias tmux='systemd-run --scope --user tmux -2'
 fi
