@@ -69,3 +69,19 @@ export MANPAGER="sh -c 'sed \"s/\\\x1b\\\[[0-9]*m//g\" | col -bx | bat -plman'"
 if [ -e "/snap/bin" ]; then
     pathadd "/snap/bin"
 fi
+
+
+### Deduplicate path ###
+new_path="$(
+    new_path=""
+    IFS=:
+    for p in $PATH; do
+        case ":$new_path:" in
+            *"$p"*);;
+            *) new_path="${new_path:+$new_path:}$p";;
+        esac
+    done
+    echo "$new_path"
+)"
+
+PATH="$new_path"
