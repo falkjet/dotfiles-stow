@@ -1,3 +1,13 @@
+pathadd() {
+    if [ -d "$1" ]; then
+	case ":$PATH:" in
+	    *":$1:"*) return
+	esac
+	PATH="$1${PATH:+":$PATH"}"
+    fi
+}
+
+
 ### .profile.d ###
 for file in ~/.profile.d/*.sh; do
     # shellcheck disable=1090
@@ -17,7 +27,7 @@ export EDITOR=nvim
 
 ### Golang ###
 export GOPATH=$HOME/.local/share/golang
-export PATH=$GOPATH/bin:$PATH
+pathadd "$GOPATH/bin"
 
 ### ls ###
 export LS_COLORS="di=38;5;39:ex=31:ln=38"
@@ -29,9 +39,11 @@ export NVM_DIR="$HOME/.local/share/nvm"
 
 ### Cargo ###
 export CARGO_HOME="$HOME/.local/share/cargo"
+pathadd "$CARGO_HOME/bin"
 
 ### Path ###
-export PATH="$CARGO_HOME/bin:$HOME/Scripts:$HOME/.local/bin:$PATH"
+pathadd "$HOME/Scripts"
+pathadd "$HOME/.local/bin"
 
 ### Pass ###
 export PASSWORD_STORE_DIR=$HOME/.local/share/password-storage
@@ -55,5 +67,5 @@ export MANPAGER="sh -c 'sed \"s/\\\x1b\\\[[0-9]*m//g\" | col -bx | bat -plman'"
 
 ### Snap ###
 if [ -e "/snap/bin" ]; then
-    export PATH="$PATH:/snap/bin"
+    pathadd "/snap/bin"
 fi
