@@ -29,7 +29,7 @@ M.setup = function(s)
     local topbar = awful.wibar({
         screen = s,
         position = "top",
-        height = 50,
+        height = 32,
     });
     s.topbar = topbar
 
@@ -51,21 +51,24 @@ M.setup = function(s)
         buttons = tasklist_buttons,
         widget_template = {
             widget = wibox.container.constraint,
-            forced_width = 300,
+            forced_width = 250,
             {
                 id = "background_role",
                 widget = wibox.container.background,
                 {
-                    left = 10,
-                    right = 10,
-                    top = 10,
-                    bottom = 10,
+                    left = 5,
+                    right = 5,
+                    top = 5,
+                    bottom = 5,
                     widget = wibox.container.margin,
                     {
                         layout = wibox.layout.fixed.horizontal,
                         {
                             widget = wibox.container.margin,
                             right = 10,
+                            top = 3,
+                            bottom = 3,
+                            left = 5,
                             {
                                 id = "icon_role",
                                 widget = wibox.widget.imagebox,
@@ -89,8 +92,8 @@ M.setup = function(s)
             id     = 'background_role',
             widget = wibox.container.background,
             {
-                left  = 18,
-                right = 18,
+                left  = 10,
+                right = 10,
                 widget = wibox.container.margin,
                 {
                         margins = 4,
@@ -123,7 +126,7 @@ M.setup = function(s)
             s.tasklist,
         },
         {
-            widget = wibox.container.margin, margins = 15,
+            widget = wibox.container.margin, margins = 5,
             {
                 layout = wibox.layout.fixed.horizontal,
                 spacing = 10,
