@@ -2,12 +2,13 @@ set $mod Mod4
 
 ### Gaps ###
 smart_gaps on
-gaps inner 0
+gaps inner 10
+focus_follows_mouse always
 
 ### Background processes ###
-exec swayidle -w timeout 300 'locksway'
+exec ~/.config/sway/run-swayidle
 exec swaybg -i ~/.config/sway/wallpaper -m fill
-exec greenclip daemon
+exec wl-paste -t text --watch clipman store
 exec i3-battery-popup -t 1m
 exec swaync
 exec xrdb ~/.Xresources
@@ -21,6 +22,7 @@ for_window [class="^.*"] border none
 for_window [title="^.*"] border none
 for_window [class="OpenGL"] floating enable
 for_window [class="PrismLauncher"] floating enable
+for_window [app_id="popup"] floating enable
 
 ### Font ###
 font pango:monospace 8
@@ -39,8 +41,8 @@ bindsym Print exec grim -t png - | wl-copy -t image/png
 bindsym Shift+Print exec grim -t png -g "$(slurp -d)" - | wl-copy -t image/png
 
 ### Brightness ###
-bindsym XF86MonBrightnessUp exec brightnessctl s 500+
-bindsym XF86MonBrightnessDown exec brightnessctl s 500-
+bindsym XF86MonBrightnessUp exec brightnessctl s '+5%'
+bindsym XF86MonBrightnessDown exec brightnessctl s '5%-'
 
 ### Volume control ###
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
@@ -55,9 +57,9 @@ floating_modifier $mod
 bindsym $mod+Return exec ~/.config/sway/terminal
 bindsym $mod+b exec brave
 bindsym $mod+Shift+x exec xkill
-bindsym $mod+c exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+bindsym $mod+c exec clipman pick --tool=rofi
 bindsym $mod+d exec rofi -show run
-bindsym $mod+space exec rofi -modi drun -show drun
+bindsym $mod+r exec rofi -modi drun -show drun
 bindsym $mod+m exec rofimoji
 bindsym $mod+p exec rofi-pass
 
@@ -70,24 +72,29 @@ bindsym ctrl+$mod+l exec locksway
 
 ### Switch window ###
 bindsym Mod1+Tab focus next
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+# bindsym $mod+h focus left
+# bindsym $mod+j focus down
+# bindsym $mod+k focus up
+# bindsym $mod+l focus right
+# bindsym $mod+Left focus left
+# bindsym $mod+Down focus down
+# bindsym $mod+Up focus up
+# bindsym $mod+Right focus right
+
+exec_always python ~/.config/sway/swaymonad/swaymonad.py
+bindsym $mod+j nop focus_next_window
+bindsym $mod+k nop focus_prev_window
+bindsym $mod+Shift+Return nop promote_window
 
 ### Move window ###
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+# bindsym $mod+Shift+h move left
+# bindsym $mod+Shift+j move down
+# bindsym $mod+Shift+k move up
+# bindsym $mod+Shift+l move right
+# bindsym $mod+Shift+Left move left
+# bindsym $mod+Shift+Down move down
+# bindsym $mod+Shift+Up move up
+# bindsym $mod+Shift+Right move right
 
 bindsym $mod+mod1+Right move workspace to output right
 bindsym $mod+mod1+Left move workspace to output left
@@ -146,22 +153,22 @@ bindsym $mod+Shift+r reload
 bindsym $mod+Shift+e exec "swaynag -m 'do you want to exit sway' -z 'exit sway' 'swaymsg exit' -s cancel"
 
 ### Resize ###
-bindsym $mod+r mode "resize"
-mode "resize" {
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
-        
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
+# bindsym $mod+r mode "resize"
+# mode "resize" {
+#         bindsym h resize shrink width 10 px or 10 ppt
+#         bindsym j resize grow height 10 px or 10 ppt
+#         bindsym k resize shrink height 10 px or 10 ppt
+#         bindsym l resize grow width 10 px or 10 ppt
+#         
+#         bindsym Left resize shrink width 10 px or 10 ppt
+#         bindsym Down resize grow height 10 px or 10 ppt
+#         bindsym Up resize shrink height 10 px or 10 ppt
+#         bindsym Right resize grow width 10 px or 10 ppt
+# 
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+#         bindsym $mod+r mode "default"
+# }
 
 ### Waybar ###
 bar {

@@ -1,0 +1,46 @@
+#!/bin/bash
+
+effect_args=()
+if swaylock --help 2>&1 | grep -- --effect-blur >/dev/null
+then
+    effect_args=(
+        --screenshots
+        --effect-blur 20x20
+        --fade-in .2
+        --effect-vignette .5:0
+        --grace 10
+    )
+fi
+args=(-e -c 000000\
+	-c 000000aa\
+	-s fill\
+	--bs-hl-color ffffff\
+	--caps-lock-bs-hl-color ffffff\
+	--key-hl-color ffffff\
+	--caps-lock-key-hl-color ffffff\
+	--indicator-radius 120\
+	--indicator-thickness 5\
+	--line-color 00000000\
+	--line-clear-color 00000000\
+	--line-caps-lock-color 00000000\
+	--line-ver-color 00000000\
+	--line-wrong-color 00000000\
+	--ring-color ffffff77\
+	--ring-clear-color ffffff77\
+	--ring-caps-lock-color ffffff44\
+	--ring-ver-color ffffff55\
+	--ring-wrong-color ff0000\
+	--separator-color 00000000\
+	--text-color ffffff\
+	--text-clear-color ffffff\
+	--text-caps-lock-color ffffff\
+	--text-ver-color ffffff\
+	--text-wrong-color ff0000\
+	--inside-color 00000000\
+	--inside-clear-color 00000000\
+	--inside-caps-lock-color 00000000\
+	--inside-ver-color 00000000\
+	--inside-wrong-color 00000000\
+    "${effect_args[@]}" "$@")
+
+swaylock "${args[@]}" || true

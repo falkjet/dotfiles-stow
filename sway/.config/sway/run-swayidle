@@ -1,0 +1,6 @@
+#!/bin/sh
+cd "$(dirname "$0")" || exit
+
+PATH="$PATH:$(dirname "$0")"
+export PATH
+swayidle before-sleep 'locksway -f --fade-in 0 --grace 0' timeout 300 'locksway -f'
