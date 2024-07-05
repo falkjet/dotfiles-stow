@@ -35,6 +35,11 @@ done
 fpath+=($HOME/.local/share/zsh/functions)
 
 
+### direnv ###
+if command -v direnv >/dev/null; then
+    eval "$(direnv hook zsh)"
+fi
+
 ### autocompletion ###
 autoload compinit
 compinit -y
