@@ -70,6 +70,20 @@ if [ -e "/snap/bin" ]; then
     pathadd "/snap/bin"
 fi
 
+### Nix ###
+if [ -e ~/.nix-profile ]; then
+    pathadd ~/.nix-profile/bin
+fi
+
+### Nim ###
+if [ -e ~/.nimble ]; then
+    pathadd "$HOME/.nimble/bin"
+fi
+
+### Elixir ###
+if [ -e ~/.mix ]; then
+    pathadd "$HOME/.mix/escripts"
+fi
 
 ### Deduplicate path ###
 new_path="$(
@@ -77,7 +91,7 @@ new_path="$(
     IFS=:
     for p in $PATH; do
         case ":$new_path:" in
-            *"$p"*);;
+            *:"$p":*);;
             *) new_path="${new_path:+$new_path:}$p";;
         esac
     done
