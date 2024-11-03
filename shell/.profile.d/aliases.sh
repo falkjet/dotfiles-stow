@@ -15,7 +15,6 @@ alias config='git --git-dir="$HOME"/dotfiles --work-tree="$HOME"'
 alias md='glow -p -w $COLUMNS'
 alias lg='lazygit'
 alias cls='clear'
-alias open="xdg-open 2>/dev/null >/dev/null"
 alias pypy=pypy3
 alias tectonic='tectonic -X'
 command -v bat >/dev/null && alias cat='bat -p'
@@ -23,6 +22,7 @@ command -v bat >/dev/null && alias cat='bat -p'
 if command -v eza >/dev/null; then
     alias ls='eza --color=auto --group-directories-first --icons=auto -I"*~"'
     alias ll='eza --color=auto --group-directories-first --icons=auto -I"*~" -l'
+    alias tree='eza --color=auto --group-directories-first --icons=auto -I"*~" --tree'
 elif /bin/ls --help | grep -- --group-directories-first >/dev/null; then
     alias ls='ls --color=auto --group-directories-first'
     alias ll='ls --color=auto --group-directories-first -l'

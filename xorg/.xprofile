@@ -13,4 +13,4 @@ xinput set-prop 'SYNA8018:00 06CB:CE67 Touchpad' 'libinput Natural Scrolling Ena
 xinput set-prop 'SYNA8018:00 06CB:CE67 Touchpad' 'libinput Disable While Typing Enabled' 0
 
 
-[ -f .Xresouces ] && xrdb -merge .Xresources
+[ -f ~/.Xresouces ] && xrdb -merge ~/.Xresources

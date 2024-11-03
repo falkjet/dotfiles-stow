@@ -1,4 +1,4 @@
 #!/bin/sh
-if command -v luarocks 2>/dev/null; then
+if command -v luarocks &>/dev/null; then
     eval "$(luarocks path --bin)"
 fi

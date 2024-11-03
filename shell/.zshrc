@@ -45,5 +45,22 @@ autoload compinit
 compinit -y
 
 
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
 
+# exec nu
+
+# alias emacs="exec sh -c \"emacsclient -ca '' \\\"$@\\\" & disown\""
+# 
+
+
+function launch() {
+    "$@" &>/dev/null & disown
+}
+
+function startemacs() {
+    launch emacsclient -ca '' "$@"
+}
+
+alias emacs='exec startemacs'
 

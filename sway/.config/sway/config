@@ -144,6 +144,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r reload
 bindsym $mod+Shift+e exec "swaynag -m 'do you want to exit sway' -z 'exit sway' 'swaymsg exit' -s cancel"
+bindsym $mod+Shift+q exit
 
 ### Resize ###
 bindsym $mod+r mode "resize"

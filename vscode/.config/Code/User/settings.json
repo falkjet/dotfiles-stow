@@ -14,6 +14,7 @@
         "-workbench.action.quickOpen"
     ],
     "editor.fontFamily": "JetBrainsMono Nerd Font",
+    "editor.fontLigatures": true,
     "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
     "npm.exclude": [
         "**/xpacks/**"
@@ -129,4 +130,7 @@
         "editor.formatOnSave": true
     },
     "window.titleBarStyle": "custom",
+    "[prisma]": {
+        "editor.formatOnSave": true,
+    }
 }

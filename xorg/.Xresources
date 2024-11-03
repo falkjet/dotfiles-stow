@@ -1,7 +1,7 @@
 !Xterm
 XTerm*faceName: JetBrainsMono Nerd Font
 XTerm*font: 7x13
-XTerm*faceSize: 10
+XTerm*faceSize: 12
 XTerm.termName: xterm-256color
 XTerm*geometry: 106x32
 XTerm*metaSendsEscape: true
