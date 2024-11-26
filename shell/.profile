@@ -62,8 +62,10 @@ export IPYTHONDIR="$HOME/.config/ipython"
 export ZSH="$HOME/.local/share/oh-my-zsh"
 
 ### Man ###
-export MANROFFOPT="-c"
-export MANPAGER="sh -c 'sed \"s/\\\x1b\\\[[0-9]*m//g\" | col -bx | bat -plman'"
+if command -v bat >/dev/null; then
+	export MANROFFOPT="-c"
+	export MANPAGER="sh -c 'sed \"s/\\\x1b\\\[[0-9]*m//g\" | col -bx | bat -plman'"
+fi
 
 ### Snap ###
 if [ -e "/snap/bin" ]; then
