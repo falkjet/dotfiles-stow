@@ -87,6 +87,13 @@ if [ -e ~/.mix ]; then
     pathadd "$HOME/.mix/escripts"
 fi
 
+### Ruby ###
+BUNDLE_PATH=~/.local/share/gem
+
+### Volta ###
+export VOLTA_HOME="$HOME/.volta"
+pathadd "$VOLTA_HOME/bin"
+
 ### Deduplicate path ###
 new_path="$(
     new_path=""
@@ -101,6 +108,4 @@ new_path="$(
 )"
 
 PATH="$new_path"
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
 
