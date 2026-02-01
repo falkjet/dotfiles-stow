@@ -17,6 +17,7 @@ alias lg='lazygit'
 alias cls='clear'
 alias pypy=pypy3
 alias tectonic='tectonic -X'
+alias lower='tr '\''[:upper:]'\'' '\''[:lower:]'\'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
