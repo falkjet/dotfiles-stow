@@ -94,6 +94,10 @@ BUNDLE_PATH=~/.local/share/gem
 export VOLTA_HOME="$HOME/.volta"
 pathadd "$VOLTA_HOME/bin"
 
+### pnpm ###
+export PNPM_HOME="$HOME/.local/share/pnpm"
+pathadd "$PNPM_HOME"
+
 ### Deduplicate path ###
 new_path="$(
     new_path=""
