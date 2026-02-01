@@ -17,6 +17,11 @@ alias lg='lazygit'
 alias cls='clear'
 alias pypy=pypy3
 alias tectonic='tectonic -X'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
 command -v bat >/dev/null && alias cat='bat -p'
 
 if command -v eza >/dev/null; then
