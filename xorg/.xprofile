@@ -3,6 +3,7 @@
 # shellcheck disable=SC1090
 . ~/.profile
 
+(
 xinput set-prop 'Elan TrackPoint' 'libinput Button Scrolling Button' 0
 xinput set-prop 'Elan Touchpad' 'libinput Natural Scrolling Enabled' 1
 xinput set-prop 'Elan Touchpad' 'libinput Disable While Typing Enabled' 0
@@ -11,6 +12,12 @@ setxkbmap us -variant altgr-intl -option caps:ctrl_modifier
 xinput set-prop 'TPPS/2 Elan TrackPoint' 'libinput Button Scrolling Button' 0
 xinput set-prop 'SYNA8018:00 06CB:CE67 Touchpad' 'libinput Natural Scrolling Enabled' 1
 xinput set-prop 'SYNA8018:00 06CB:CE67 Touchpad' 'libinput Disable While Typing Enabled' 0
+) 2>/dev/null
+
+export GTK_THEME=Lavanda-Sea-Dark
+export QT_QPA_PLATFORMTHEME=qt6ct
 
 
 [ -f ~/.Xresouces ] && xrdb -merge ~/.Xresources
+
+true
