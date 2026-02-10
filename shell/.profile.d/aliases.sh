@@ -2,7 +2,9 @@
 alias sudo='sudo --preserve-env=TERMINFO,EDITOR'
 alias please=sudo
 alias restart='clear; exec zsh'
+alias ed='rlwrap ed -p "> "'
 alias grep='grep --color'
+alias vrep='grep -v --color'
 alias la='ls -la'
 alias lA='ls -lA'
 alias clip='xclip -selection c'
