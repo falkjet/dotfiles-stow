@@ -37,8 +37,8 @@ for file in ~/.zshrc.d/*.zsh; do
 done
 
 ### fpath ###
-fpath+=($HOME/.local/share/zsh/functions)
-
+fpath+=($XDG_DATA_HOME/zsh/functions)
+fpath+=($XDG_CONFIG_HOME/zsh/functions)
 
 ### direnv ###
 if command -v direnv >/dev/null; then

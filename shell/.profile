@@ -26,14 +26,11 @@ if [ -e "/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-g
 	eval "$(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator | grep -v '^HOME' | sed 's/^/export /')"
 fi
 
-### XDG variables ###
-export XDG_CONFIG_HOME="$HOME/.config"
-
 ### neovim ###
 export EDITOR=nvim
 
 ### Golang ###
-export GOPATH="$HOME/.local/share/golang"
+export GOPATH="$XDG_DATA_HOME/golang"
 pathadd "$GOPATH/bin"
 
 ### ls ###
@@ -43,10 +40,10 @@ export LS_COLORS="di=38;5;39:ex=31:ln=38"
 export EZA_COLORS="reset:ur=32:gr=32:tr=32:uw=33:gw=33:tw=33:ue=31:gx=31:tx=31:di=34"
 
 ### nvm ###
-export NVM_DIR="$HOME/.local/share/nvm"
+export NVM_DIR="$XDG_DATA_HOME/nvm"
 
 ### Cargo ###
-export CARGO_HOME="$HOME/.local/share/cargo"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
 pathadd "$CARGO_HOME/bin"
 
 ### Path ###
@@ -54,7 +51,7 @@ pathadd "$HOME/Scripts"
 pathadd "$HOME/.local/bin"
 
 ### Pass ###
-export PASSWORD_STORE_DIR="$HOME/.local/share/password-storage"
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-storage"
 
 ### lf file manager ###
 if [ -e "/usr/share/lf/lfcd.sh" ]; then
@@ -64,10 +61,10 @@ if [ -e "/usr/share/lf/lfcd.sh" ]; then
 fi
 
 ### ipython ###
-export IPYTHONDIR="$HOME/.config/ipython"
+export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
 
 ### Zsh ###
-export ZSH="$HOME/.local/share/oh-my-zsh"
+export ZSH="$XDG_DATA_HOME/oh-my-zsh"
 
 ### Man ###
 if command -v bat >/dev/null; then
@@ -106,17 +103,17 @@ fi
 BUNDLE_PATH=~/.local/share/gem
 
 ### Volta ###
-export VOLTA_HOME="$HOME/.local/share/volta"
+export VOLTA_HOME="$XDG_DATA_HOME/volta"
 pathadd "$VOLTA_HOME/bin"
 
 ### pnpm ###
-export PNPM_HOME="$HOME/.local/share/pnpm"
+export PNPM_HOME="$XDG_DATA_HOME/pnpm"
 pathadd "$PNPM_HOME"
 
 ### ghcup ###
 export GHCUP_USE_XDG_DIRS=1
-if [ -f "$HOME/.local/share/ghcup/env" ]; then
-	. "$HOME/.local/share/ghcup/env"
+if [ -f "$XDG_DATA_HOME/ghcup/env" ]; then
+	. "$XDG_DATA_HOME/ghcup/env"
 fi
 
 ### Deduplicate path ###
