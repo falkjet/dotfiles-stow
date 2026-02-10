@@ -15,6 +15,11 @@ if command -v zoxide >/dev/null; then
     eval "$(zoxide init posix --cmd c --hook prompt)"
 fi
 
+### Fzf ###
+if [ -f /usr/share/fzf/shell/key-bindings.bash ]; then
+    . /usr/share/fzf/shell/key-bindings.bash
+fi
+
 ### .bashrc.d ###
 shopt -s nullglob
 for file in ~/.bashrc.d/*.{sh,bash}; do

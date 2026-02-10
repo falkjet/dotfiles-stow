@@ -26,6 +26,11 @@ if command -v zoxide > /dev/null; then
     . <(zoxide init zsh --cmd c)
 fi
 
+### FZF ###
+if [ -f /usr/share/fzf/shell/key-bindings.zsh ]; then
+    . /usr/share/fzf/shell/key-bindings.zsh
+fi
+
 ### .zshrc.d ###
 for file in ~/.zshrc.d/*.zsh; do
     source $file
