@@ -98,6 +98,12 @@ pathadd "$VOLTA_HOME/bin"
 export PNPM_HOME="$HOME/.local/share/pnpm"
 pathadd "$PNPM_HOME"
 
+### ghcup ###
+export GHCUP_USE_XDG_DIRS=1
+if [ -f "$HOME/.local/share/ghcup/env" ]; then
+	. "$HOME/.local/share/ghcup/env"
+fi
+
 ### Deduplicate path ###
 new_path="$(
     new_path=""
