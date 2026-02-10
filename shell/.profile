@@ -34,6 +34,9 @@ pathadd "$GOPATH/bin"
 ### ls ###
 export LS_COLORS="di=38;5;39:ex=31:ln=38"
 
+### eza ###
+export EZA_COLORS="reset:ur=32:gr=32:tr=32:uw=33:gw=33:tw=33:ue=31:gx=31:tx=31:di=34"
+
 ### nvm ###
 export NVM_DIR="$HOME/.local/share/nvm"
 
