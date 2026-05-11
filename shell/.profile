@@ -122,6 +122,9 @@ if [ -f "$XDG_DATA_HOME/ghcup/env" ]; then
 	. "$XDG_DATA_HOME/ghcup/env"
 fi
 
+### gradle ###
+export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle 
+
 ### Deduplicate path ###
 new_path="$(
     new_path=""
