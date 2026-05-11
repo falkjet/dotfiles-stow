@@ -1,8 +1,12 @@
 ### source .profile
 [[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
 
+### Make state and cache dirs ###
+[ -d "$XDG_STATE_HOME"/zsh ] || mkdir -p "$XDG_STATE_HOME"/zsh
+[ -d "$XDG_CACHE_HOME"/zsh ] || mkdir -p "$XDG_CACHE_HOME"/zsh
+
 ### history
-HISTFILE=~/.zsh_history
+HISTFILE="$XDG_STATE_HOME/zsh/history"
 HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
