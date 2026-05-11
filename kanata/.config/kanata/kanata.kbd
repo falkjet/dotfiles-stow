@@ -8,7 +8,7 @@
 	grv	1	2	3	4	5	6	7	8	9	0
 	tab	q	w	e	r	t	y	u	i	o	p
 	caps	a	s	d	f	g	h	j	k	l	;	'
-	lsft	z	x	c	v	b	n	m	,	.	/
+	lsft	102d	z	x	c	v	b	n	m	,	.	/
 	lctl	lmet	lalt			spc			ralt	rmet)
 
 (defalias
@@ -31,7 +31,7 @@
 	grv	1	2	3	4	5	6	7	8	9	0
 	tab	q	@w	e	r	t	y	u	i	o	p
 	bspc	@a	@s	@d	@f	g	h	@j	@k	@l	@;	ret
-	z	@x	@c	v	b	b	n	m	,	@.	/
+	z	z	@x	@c	v	b	b	n	m	,	@.	/
 	lrld	lmet	bspc			spc			ralt	rmet)
 
 
@@ -39,19 +39,19 @@
 	grv	1	2	3	4	5	6	7	8	9	0
 	tab	S-1	S-8	=	S-4	S-=	S-5	S-[	S-]	S-'	'
 	lctl	S-,	S-\	-	S-.	S-2	S-3	S-9	S-0	;	S-;	ret
-	S-/	S-`	/	\	S-7	S-1	S--	[	]	=	`
+	lsft	S-/	S-`	/	\	S-7	S-1	S--	[	]	=	`
 	lrld	lmet	bspc			spc			ralt	rmet)
 
 (deflayer navigation
 	grv	1	2	3	4	5	6	7	8	9	0
 	tab	q	w	e	r	t	y	u	i	o	p
 	bspc	@a	@s	@d	@f	g	left	down	up	right	@;	ret
-	z	@x	@c	v	b	b	n	m	,	@.	/
+	z	z	@x	@c	v	b	b	n	m	,	@.	/
 	lrld	lmet	bspc			spc			ralt	rmet)
 
 (deflayer workspaces
 	grv	1	2	3	4	5	6	7	8	9	0
 	tab	q	w	e	r	t	y	M-7	M-8	M-9	p
 	bspc	@a	@s	@d	@f	g	h	M-4	M-5	M-6	@;	ret
-	z	@x	@c	v	b	b	M-1	M-1	M-2	M-3	/
+	z	z	@x	@c	v	b	b	M-1	M-1	M-2	M-3	/
 	lrld	lmet	bspc			spc			ralt	rmet)
