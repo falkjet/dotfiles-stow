@@ -1,4 +1,4 @@
-command -v rbenv >/dev/null || exit
+command -v rbenv >/dev/null || return
 
 export RBENV_ROOT="$HOME/.local/share/rbenv"
 export PATH="$RBENV_ROOT/shims:${PATH}"
