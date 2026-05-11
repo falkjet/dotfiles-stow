@@ -89,6 +89,9 @@ if [ -e ~/.nix-profile ]; then
     pathadd ~/.nix-profile/bin
 fi
 
+### Mix ###
+export MIX_XDG="true"
+
 ### Nim ###
 if [ -e ~/.nimble ]; then
     pathadd "$HOME/.nimble/bin"
@@ -100,7 +103,10 @@ if [ -e ~/.mix ]; then
 fi
 
 ### Ruby ###
-BUNDLE_PATH=~/.local/share/gem
+export BUNDLE_USER_CACHE="$XDG_CACHE_HOME/bundle"
+export BUNDLE_USER_CONFIG="$XDG_CONFIG_HOME/bundle/config"
+export BUNDLE_USER_PLUGIN="$XDG_DATA_HOME/bundle"
+export BUNDLE_PATH="$XDG_DATA_HOME/gem"
 
 ### Volta ###
 export VOLTA_HOME="$XDG_DATA_HOME/volta"
