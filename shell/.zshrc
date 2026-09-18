@@ -33,6 +33,8 @@ fi
 ### FZF ###
 if [ -f /usr/share/fzf/shell/key-bindings.zsh ]; then
     . /usr/share/fzf/shell/key-bindings.zsh
+elif [ -f /usr/share/fzf/key-bindings.zsh ]; then
+    . /usr/share/fzf/key-bindings.zsh
 fi
 
 ### .zshrc.d ###

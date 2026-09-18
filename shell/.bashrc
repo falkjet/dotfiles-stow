@@ -18,6 +18,8 @@ fi
 ### Fzf ###
 if [ -f /usr/share/fzf/shell/key-bindings.bash ]; then
     . /usr/share/fzf/shell/key-bindings.bash
+elif [ -f /usr/share/fzf/key-bindings.bash ]; then
+    . /usr/share/fzf/key-bindings.bash
 fi
 
 ### .bashrc.d ###
